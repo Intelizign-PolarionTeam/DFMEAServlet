@@ -8,12 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intelizign.report.fmea.model.CreateWorkItemPojo;
+import com.polarion.alm.tracker.model.IWorkItem;
 
 public interface FMEAService {
 
 	public void createWorkItem(HttpServletRequest req, HttpServletResponse resp) throws Exception;
 	
-	public void createLink(HttpServletRequest req, HttpServletResponse resp) throws Exception;
-	
 	public Map<String, Object> createObj(List<CreateWorkItemPojo> createWorkItemPojos, ObjectMapper objectMapper);
+	
+
 }
