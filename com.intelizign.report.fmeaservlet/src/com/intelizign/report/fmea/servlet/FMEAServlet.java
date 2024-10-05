@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.intelizign.report.fmea.impl.FMEAImpl;
+import com.intelizign.report.fmea.impl.CreateFmeaWorkItem;
 import com.intelizign.report.fmea.service.FMEAService;
 import com.polarion.core.util.logging.Logger;
 
@@ -21,7 +21,7 @@ public class FMEAServlet extends HttpServlet{
 
 	public void init() throws ServletException {
 		super.init();
-		this.dfmeaService = new FMEAImpl();	
+		this.dfmeaService = new CreateFmeaWorkItem();	
 	}
 	
 	
@@ -43,6 +43,9 @@ public class FMEAServlet extends HttpServlet{
 				switch (action) {
 				case "createWorkItem":
 					dfmeaService.createWorkItem(req, resp);
+					break;
+				case "createLink":
+					dfmeaService.createLink(req, resp);
 					break;
 				default:
 					throw new IllegalArgumentException("Invalid action specified");

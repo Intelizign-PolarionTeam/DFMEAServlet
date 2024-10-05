@@ -1,15 +1,13 @@
-package com.intelizign.report.fmea.pojo;
+package com.intelizign.report.fmea.model;
 
 import java.util.List;
 
-public class WorkItem {
+public class CreateWorkItemPojo {
     private String wiType;
     private String projectId;
     private String docPath;
     private String addAsChildNode;
     private List<FieldData> fieldData;
-
-    // Getters and setters
 
     public String getWiType() {
         return wiType;
@@ -49,28 +47,5 @@ public class WorkItem {
 
     public void setFieldData(List<FieldData> fieldData) {
         this.fieldData = fieldData;
-    }
-
-    public static class FieldData {
-        private String field;
-        private List<String> value;
-
-        // Getters and setters
-
-        public String getField() {
-            return field;
-        }
-
-        public void setField(String field) {
-            this.field = field;
-        }
-
-        public List<String> getValue() {
-            return value;
-        }
-
-        public void setValue(List<String> value) {
-            this.value = value;
-        }
     }
 }

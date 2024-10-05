@@ -1,0 +1,78 @@
+Json Request For Creating WorkItem
+==================================
+
+[
+    {
+        "wiType": "function",
+        "projectId": "Inception_Report",
+        "docPath": "_default/FMEA-Document2",
+        "addAsChildNode": "no",
+        "fieldData": [
+            {
+                "field": "title",
+                "value": ["Additional WorkItem"]
+            },
+            {
+                "field": "description",
+                "value": ["Additional WorkItem"]
+            },
+            {
+                "field": "subType",
+                "value": ["design"]
+            }
+        ]
+    }
+]
+
+
+
+Json Request For Creating Backlinked WorkItem
+=============================================
+[
+    {
+        "wiType": "designRequirement",
+        "projectId": "Inception_Report",
+        "docPath": "",
+        "addAsChildNode": "no",
+        "fieldData": [
+            {
+                "field": "title",
+                "value": ["sss"]
+            },
+            {
+                "field": "description",
+                "value": ["sss"]
+            },
+            {
+                "field": "linkedWorkItems",
+                "value": [
+                    {
+                        "wiToLink": "Inception_Report/IR-515",
+                        "linkrole": "classifies",
+                        "suspect": false,
+                        "direction": "backLinked"
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+
+Json Request For Linking WorkItem
+=================================
+[
+    {
+        "child": "Inception_Report/IR-529",
+        "project": "Inception_Report",
+        "parents": [
+            {
+                "id": "Inception_Report/IR-519",
+                "linkrole": "parent",
+                "revision": null,
+                "suspect": false
+            }
+        ]
+    }
+]
+
